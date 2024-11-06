@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { Header } from "./Componentes/Header";
+import 'boxicons';
+import { BrowserRouter as Router} from "react-router-dom";
+import { Paginas} from "./Componentes/Paginas";
+import {DataProvider} from "./Context/Dataprovider"
+import { Carrito } from "./Componentes/Carrito";
+
+
+
+
 
 function App() {
   return (
+    <DataProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+      <Header></Header>
+      <Carrito></Carrito>
+      <Paginas></Paginas>
+      </Router>
     </div>
+    </DataProvider>
   );
 }
 
